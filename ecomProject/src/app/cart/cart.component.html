@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+<br>
+<br>
+<div class="container">
+    <h1 class="text-center">User Cart</h1>
+    <table class="table">
+        <tr>
+            <th>Sno</th>
+            <th>Product</th>
+            <th>Rate</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Action</th>
+        </tr>
+        <tr *ngFor="let row of cart_data; let i=index">
+            <td>{{i+1}}</td>
+            <td>{{row.product_name}}</td>
+            <td>&#8377;&nbsp;{{row.price}}</td>
+            <td>
+                <button class="btn p-0 pl-1 pr-1" (click)="decqty(row.product_econ_cart_id)">-</button> {{row.qty}}
+                <button class="btn p-0 pl-1 pr-1" (click)="incqty(row.product_econ_cart_id)">+</button></td>
+            <td class="font-weight-bold ">&#8377;{{row.price*row.qty}}</td>
+            <td><button class="btn btn-danger p-1" (click)="removeProduct(row.product_econ_cart_id)"><i class="icon icon-trash"></i></button></td>
+        </tr>
+    </table>
+    <br>
+    <div class="text-right">
+        <button class="btn btn-primary" routerLink="/confirm_order">Confirm Order</button>
+    </div>
+</div>
+<app-footer></app-footer>
+<div id="webloader" *ngIf="loading"><i class="icon-solid icon-loader" style="font-size: 70px;"></i></div>

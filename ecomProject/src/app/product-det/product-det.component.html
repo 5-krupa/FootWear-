@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+<br>
+<div class="container" *ngIf="product_info">
+    <div class="row">
+        <div class="col-md-6">
+            <img [src]="product_info.product_img" width="100%">
+        </div>
+        <div class="col-md-6">
+            <h2 style="font-size: 35px;">{{product_info.product_name}}</h2>
+            <h5>{{product_info.cat_name}}</h5>
+            <h1>&#8377;{{product_info.price}}</h1>
+            <button class="btn btn-primary" (click)="addcart()" *ngIf="product_info.cart=='No'">Add to Cart</button>
+            <button class="btn btn-success" (click)="addcart()" *ngIf="product_info.cart!=='No'">Added to Cart</button>
+        </div>
+    </div>
+</div>
+<br>
+<app-footer></app-footer>
+<div id="webloader" *ngIf="loading"><i class="icon-solid icon-loader" style="font-size: 70px;"></i></div>

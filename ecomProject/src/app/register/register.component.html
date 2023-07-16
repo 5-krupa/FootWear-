@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+<form [formGroup]="userForm" (ngSubmit)="registerUser()">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 mt-5">
+                <div class="p-3 shadow">
+                    <h1>Register Now</h1>
+                    <label> User Name</label>
+                    <input type="text" placeholder="User Name" formControlName="user_name" class="form-control mb-3">
+
+                    <label> User Mobile</label>
+                    <input type="text" placeholder="User Mobile" formControlName="user_mobile" class="form-control mb-3">
+
+                    <label> User Email</label>
+                    <input type="text" placeholder="User Email" formControlName="user_email" class="form-control mb-3">
+
+                    <label> User Password</label>
+                    <input type="text" placeholder="User Password" formControlName="user_password" class="form-control mb-3">
+
+                    <button class="btn btn-primary">Register Now</button>
+                </div>
+            </div>
+        </div>
+        <app-footer></app-footer>

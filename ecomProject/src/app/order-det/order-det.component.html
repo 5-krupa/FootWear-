@@ -1,0 +1,53 @@
+<app-navbar></app-navbar>
+<br>
+<div class="container">
+    <div class="row bg-dark">
+        <div class="col-md-12">
+            <h1 class="text-center text-white">INVOICE</h1>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="row text-dark">
+            <div class="col-md-10" *ngFor="let row of orderdata.order_det">
+                <h1 class="text-dark">Address Details</h1>
+                <h3>{{row.product_order_id}}</h3>
+                <h3>{{row.entry_date}}</h3>
+                <h3>{{row.area}}</h3>
+                <h3>{{row.city}}</h3>
+                <h3>{{row.district}}</h3>
+                <h3>{{row.state}}</h3>
+                <h3>{{row.country}}</h3>
+                <h3>{{row.pincode}}</h3>
+            </div>
+            <div class="col-md-2 pt-2 pb-2">
+                <img src="assets/images/shoes-logo2.jpg" style="height: 100px;width: 100px;">
+            </div>
+        </div>
+    </div>
+    <div class="row text-dark">
+        <div class="col-md-12">
+            <table class="table">
+                <tr>
+                    <th>Sno</th>
+                    <th>Product</th>
+                    <th>Rate</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <tr *ngFor="let row of orderdata.order_products; let i=index ">
+                        <td>{{i+1}}</td>
+                        <td>{{row.product_name}}</td>
+                        <td>&#8377;&nbsp;{{row.price}}</td>
+                        <td> {{row.qty}}</td>
+                        <td class="font-weight-bold ">&#8377;{{row.price*row.qty}}</td>
+                    </tr>
+
+            </table>
+        </div>
+    </div>
+
+    <button class="btn btn-primary">Download pdf</button>
+
+</div>
+<app-footer></app-footer>

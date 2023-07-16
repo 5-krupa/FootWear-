@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let row of plist">
+            <div class="card" [routerLink]="'/product_det/'+row.product_tbl_id">
+                <div class="card-header">
+                    <img [src]="row.product_img" width="100%">
+                </div>
+                <div class="card-body">
+                    {{row.product_name}}
+                    <h2>&#8377;{{row.price}}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
+<div id="webloader" *ngIf="loading"><i class="icon-solid icon-loader" style="font-size: 70px;"></i></div>
